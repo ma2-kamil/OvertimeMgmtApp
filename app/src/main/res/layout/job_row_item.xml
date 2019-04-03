@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginTop="5dp"
+    android:padding="4dp"
+    android:background="#fff"
+    android:id="@+id/container"
+    >
+
+    <ImageView
+        android:id="@id/imagejob"
+        android:layout_width="75dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="30dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/ic_event_available_pink_24dp" />
+
+    <LinearLayout
+        android:layout_width="324dp"
+        android:layout_height="132dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/shift_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Shift Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.5dp"
+            android:textSize="15sp"
+            android:text="Date" android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.5dp"
+            android:text="Start Time"
+            android:textSize="15sp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.5dp"
+            android:text="End Time"
+            android:textSize="15sp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.5dp"
+            android:text="Hourly Rate"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
