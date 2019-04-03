@@ -14,7 +14,8 @@ Then just build and run the app on your device or Android Studio.
 Download Link for APK:
 http://ge.tt/7F3HNNv2/
 
-Or Scan this:
+
+![OvertimeQR](https://user-images.githubusercontent.com/32701163/55512827-01483480-565c-11e9-9bcd-e1a2672c6d69.png)
  
 
 
