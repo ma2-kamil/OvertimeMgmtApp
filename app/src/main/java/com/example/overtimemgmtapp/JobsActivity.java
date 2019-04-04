@@ -1,7 +1,11 @@
 package com.example.overtimemgmtapp;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class JobsActivity extends AppCompatActivity {
+    private NotificationManagerCompat notificationManager;
 
 
     @Override
@@ -138,7 +143,7 @@ public class JobsActivity extends AppCompatActivity {
             bt_delete.setVisibility(View.INVISIBLE);
         }
 
-
+        notificationManager = NotificationManagerCompat.from(this);
     }
 
     public void BookShift(View view){
@@ -157,6 +162,19 @@ public class JobsActivity extends AppCompatActivity {
         finish();
         startActivity(a);
         JobsActivity.this.overridePendingTransition(0, 0);
+
+        // Notification system only works on device which makes request, need to connect to a
+        // cloud service for functionality to all users.
+
+        Notification notification = new NotificationCompat.Builder(this, notify.CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_notify)
+                .setContentTitle("Shift Has Been Filled")
+                .setContentText("NAME X has taken shift X")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+       // notificationManager.notify(1, notification);
 
 
     }

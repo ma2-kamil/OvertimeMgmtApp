@@ -2,7 +2,6 @@
     <string name="app_name">OvertimeMgmtApp</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="register_here">Register Here</string>
     <string name="login">login</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
@@ -47,6 +46,9 @@
     <string name="accountdetails">Account Details</string>
     <string name="home">Home</string>
     <string name="delete">Delete</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register_here">Register Here</string>
+    <string name="full_name">Full Name</string>
 
 
 </resources>
