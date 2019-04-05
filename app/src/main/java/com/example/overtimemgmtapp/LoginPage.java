@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,6 +32,10 @@ public class LoginPage extends AppCompatActivity {
     EditText UsernameEt, PasswordEt;
     public static UserDetails user; // Stores all the user info for use in other pages
 
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor edit;
+    private CheckBox SaveDetails;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,11 @@ public class LoginPage extends AppCompatActivity {
         }
         UsernameEt = findViewById(R.id.et_user);
         PasswordEt = findViewById(R.id.et_pass);
+        SaveDetails = findViewById(R.id.rememberme);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        edit = preferences.edit();
+        savesharedpref();
 
     }
 
@@ -110,8 +122,9 @@ public class LoginPage extends AppCompatActivity {
 
                     }else{
                         Context context = getApplicationContext();
-                        Toast.makeText(context,"LOGIN FAILED",
+                        Toast.makeText(context,"Username is not recognised",
                                 Toast.LENGTH_SHORT).show();
+                        // if username is not in db then we show a toast msg.
                     }
 
                 } catch (JSONException e) {
@@ -120,6 +133,32 @@ public class LoginPage extends AppCompatActivity {
 
             }
         };
+
+        if(SaveDetails.isChecked()){
+            // if the checkbox is checked then we save the details in the text fields to the sharedpref
+            edit.putString(getString(R.string.ucheckbox), "true");
+            edit.commit();
+
+            // saving username by using our final username variable
+            edit.putString(getString(R.string.username), username);
+            edit.commit();
+
+            //saving password same thing as above
+            edit.putString(getString(R.string.password), password);
+            edit.commit();
+        }else {
+            // if checkbox isnt checked we equal it to false and save empty strings instead.
+            edit.putString(getString(R.string.ucheckbox), "false");
+            edit.commit();
+
+            // saving empty string instead
+            edit.putString(getString(R.string.username), "");
+            edit.commit();
+
+            //saving empty string instead
+            edit.putString(getString(R.string.password), "");
+            edit.commit();
+        }
 
 
         LoginRequest loginRequest = new LoginRequest(username, password, responseListener);
@@ -166,6 +205,22 @@ public class LoginPage extends AppCompatActivity {
         });
 
         return builder;
+    }
+
+    private void savesharedpref(){
+        String ucheckbox = preferences.getString(getString(R.string.ucheckbox), "false");
+        String username = preferences.getString(getString(R.string.username), "");
+        String password = preferences.getString(getString(R.string.password), "");
+
+        UsernameEt.setText(username);
+        PasswordEt.setText(password);
+
+        if (ucheckbox.equals("true")){
+            SaveDetails.setChecked(true);
+        }else {
+            SaveDetails.setChecked(false);
+        }
+
     }
 
 }
