@@ -49,6 +49,7 @@ public class LoginPage extends AppCompatActivity {
 
         final String username = UsernameEt.getText().toString();
         final String password = PasswordEt.getText().toString();
+
         String type = "login";
 
       BackgroundWorker backgroundWorker = new BackgroundWorker(this);

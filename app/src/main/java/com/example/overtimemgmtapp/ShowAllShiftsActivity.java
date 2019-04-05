@@ -33,7 +33,7 @@ import java.util.List;
 
 public class ShowAllShiftsActivity extends AppCompatActivity {
     // code mostly same as UserMain
-    private final String job_url = "http://192.168.0.10/ot/getjobs.php"; // change to getjobs php file
+    private final String job_url = "https://overtimemgmt.000webhostapp.com/getjobs.php"; // change to getjobs php file
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private List<Jobs> mJobs;

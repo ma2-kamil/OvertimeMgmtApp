@@ -36,13 +36,14 @@ public class BackgroundWorker extends AsyncTask<String, String, String> {
     protected String doInBackground(String... params) {
         String type = params[0];
         // Change to ip to your own local server and where your php files are located. mine are in a folder called "ot"
-        String login_url = "http://192.168.0.10/ot/login.php";
-        String register_url = "http://192.168.0.10/ot/register.php";
-        String addshift_url = "http://192.168.0.10/ot/addshift.php";
-        String bookshift_url = "http://192.168.0.10/ot/book.php";
-        String deleteshift_url = "http://192.168.0.10/ot/delete.php";
-        String addtime_url = "http://192.168.0.10/ot/addtime.php";
-        String deletetime_url = "http://192.168.0.10/ot/deletetime.php";
+        // No need to change anymore should work fine on this webhost.
+        String login_url = "https://overtimemgmt.000webhostapp.com/login.php";
+        String register_url = "https://overtimemgmt.000webhostapp.com/register.php";
+        String addshift_url = "https://overtimemgmt.000webhostapp.com/addshift.php";
+        String bookshift_url = "https://overtimemgmt.000webhostapp.com/book.php";
+        String deleteshift_url = "https://overtimemgmt.000webhostapp.com/delete.php";
+        String addtime_url = "https://overtimemgmt.000webhostapp.com/addtime.php";
+        String deletetime_url = "https://overtimemgmt.000webhostapp.com/deletetime.php";
 
         if(type.equals("login")) {
             try {

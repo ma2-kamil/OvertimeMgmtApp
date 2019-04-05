@@ -44,7 +44,7 @@ import java.util.List;
 public class UserMain extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     // Variables, change job url to php file which gets times.
-    private final String job_url = "http://192.168.0.10/ot/gettimes.php";
+    private final String job_url = "https://overtimemgmt.000webhostapp.com/gettimes.php";
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private List<Schedule> mySchedule;
