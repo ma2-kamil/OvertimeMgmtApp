@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserAvailability"></activity>
+        <activity android:name=".ViewEmployeeTimes"></activity>
+        <activity android:name=".UserAvailability" />
         <activity android:name=".TimesActivity" />
         <activity android:name=".UserMain" />
         <activity android:name=".JobsActivity" />

@@ -1,7 +1,5 @@
 package com.example.overtimemgmtapp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -17,7 +15,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class AccountSettingsActivity extends AppCompatActivity {
     // This whole page still needs to be work on, but for now it will used to display the details of the user.
@@ -25,6 +22,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
     TextView tvuser, tvfullname, tvemail, tvuniquecode;
     EditText etpass;
     CheckBox cbpass;
+    Button btn;
 
 
 
@@ -32,6 +30,12 @@ public class AccountSettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+        btn = findViewById(R.id.viewtimes);
+        if(LoginPage.user.shiftmanager.equals("0"))
+        {
+            // Hide the view all times button if user is a employee
+            btn.setVisibility(View.INVISIBLE);
+        }
 
 
         tvfullname = findViewById(R.id.tv_afullname);
@@ -128,6 +132,10 @@ public class AccountSettingsActivity extends AppCompatActivity {
     public void OnLogout(View view){
         startActivity(new Intent(this, LoginPage.class)); //start the Login activity Again
 
+    }
+
+    public void OnViewTimes(View view){
+        startActivity(new Intent(this, ViewEmployeeTimes.class)); //start the view all times class
     }
 
 }

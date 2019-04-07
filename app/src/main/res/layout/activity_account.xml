@@ -13,7 +13,7 @@
         android:layout_height="61dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="96dp"
         android:onClick="OnLogout"
         android:text="@string/log_out"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
@@ -39,15 +39,14 @@
         android:id="@+id/tv_ausername"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:text="@string/tvusername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="20dp"
-        android:textSize="16sp"/>
+        android:text="@string/tvusername"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -122,6 +121,19 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_apassword" />
+        app:layout_constraintTop_toBottomOf="@+id/et_apassword"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/viewtimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="View All Employee Times "
+        android:onClick="OnViewTimes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
 
 </android.support.constraint.ConstraintLayout>
